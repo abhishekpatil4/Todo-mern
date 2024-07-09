@@ -1,12 +1,14 @@
-const todos = require("../todolist.json");
+const todos = require("../db/todolist.json");
+const { addTask, deleteTask } = require("../db/dbOperations");
 
 const getAllTodoItems = (req, res) => {
-    console.log("todos: ", todos);
-    res.send("all todos");
+    console.log("req.body: ", req.body);
+    res.send(todos);
 }
 
 const addNewTodoItem = (req, res) => {
-    res.send("add new");
+    addTask(req.body.task);
+    res.send("Task added");
 }
 
 const deleteTodoItem = (req, res) => {

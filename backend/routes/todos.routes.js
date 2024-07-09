@@ -3,8 +3,8 @@ const { getAllTodoItems, addNewTodoItem, deleteTodoItem } = require("../controll
 
 router.get("/", getAllTodoItems);
 
-router.get("/add", addNewTodoItem);
+router.post("/add", addNewTodoItem);
 
-router.get("/delete", deleteTodoItem);
+router.delete("/delete", deleteTodoItem);
 
 module.exports = router;

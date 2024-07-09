@@ -1,14 +1,10 @@
 [
-    {
-        "id": 1,
-        "task": "Buy groceries"
-    },
-    {
-        "id": 2,
-        "task": "Finish project report"
-    },
-    {
-        "id": 3,
-        "task": "Call dentist for appointment"
-    }
+  {
+    "id": "49432b8e-4146-4701-af4b-1b303973cc74",
+    "task": "check if endpoint is working"
+  },
+  {
+    "id": "34f9e3a4-7d0e-4950-a303-a6e2bda88a80",
+    "task": "check if endpoint is working 2"
+  }
 ]
