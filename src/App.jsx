@@ -1,6 +1,7 @@
 import TodoItem from "./components/todoItem";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import AddTodoItem from "./components/addTodoItem";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -25,9 +26,10 @@ const App = () => {
             <TodoItem key={todo._id} id={todo._id} task={todo.task} setTodos={setTodos} />
           )
           :
-          <p>No data</p>
+          <p style={{textAlign:"center"}}>No data</p>
       }
     </div>
+    <AddTodoItem setTodos={setTodos}/>
   </div>
 };
 

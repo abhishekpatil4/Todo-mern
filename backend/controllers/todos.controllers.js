@@ -10,11 +10,13 @@ const getAllTodoItems = async (req, res) => {
 
 const addNewTodoItem = async (req, res) => {
     const task = req.body.task;
+    console.log("task: ", task);
     try {
         const newTask = await new Todo({
             task
         }).save();
-        res.status(201).send('New task added');
+        console.log("newTask: ", newTask);
+        res.status(201).send(newTask);
     } catch (error) {
         res.send(error);
     }
