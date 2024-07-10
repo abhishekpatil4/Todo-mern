@@ -4,6 +4,10 @@ import { useState } from "react";
 const AddTodoItem = ({ setTodos }) => {
     const [task, setTask] = useState();
     const handleAdd = async () => {
+        if(task.trim() === ""){
+            alert("Please enter the task");
+            return ;
+        }
         try {
             const res = await axios.post(import.meta.env.VITE_ENDPOINT + "/todos/add", {
                 task: task
