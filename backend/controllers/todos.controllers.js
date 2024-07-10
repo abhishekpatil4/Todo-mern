@@ -1,18 +1,41 @@
-const todos = require("../db/todolist.json");
-const { addTask, deleteTask } = require("../db/dbOperations");
+const Todo = require("../db/models/todo.model");
 
-const getAllTodoItems = (req, res) => {
-    console.log("req.body: ", req.body);
-    res.send(todos);
+const getAllTodoItems = async (req, res) => {
+    try {
+        res.send(await Todo.find());
+    } catch (error) {
+        res.send(error);
+    }
 }
 
-const addNewTodoItem = (req, res) => {
-    addTask(req.body.task);
-    res.send("Task added");
+const addNewTodoItem = async (req, res) => {
+    const task = req.body.task;
+    try {
+        const newTask = await new Todo({
+            task
+        }).save();
+        res.status(201).send('New task added');
+    } catch (error) {
+        res.send(error);
+    }
 }
 
-const deleteTodoItem = (req, res) => {
-    res.send("delete item");
+const deleteTodoItem = async (req, res) => {
+    const id = req.body.taskID
+    try {
+        const result = await Todo.findByIdAndDelete(id);
+        if (result) {
+            console.log('Document deleted successfully');
+            return res.send("Document deleted successfully");
+        } else {
+            console.log('Document not found');
+            return res.send("Document not found");
+        }
+    } catch (error) {
+        console.error('Error deleting document:', error);
+        res.send(error);
+    }
 }
+
 
 module.exports = { getAllTodoItems, addNewTodoItem, deleteTodoItem };

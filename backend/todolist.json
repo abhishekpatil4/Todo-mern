@@ -6,5 +6,13 @@
   {
     "id": "34f9e3a4-7d0e-4950-a303-a6e2bda88a80",
     "task": "check if endpoint is working 2"
+  },
+  {
+    "id": "5c7e2636-f0dc-4ac3-8c32-77f6232dd1b7",
+    "task": "check if endpoint is working 3"
+  },
+  {
+    "id": "a14903ed-64dc-4ca9-bed9-63c662ce575a",
+    "task": "Complete Node.js project"
   }
 ]
