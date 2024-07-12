@@ -1,6 +1,8 @@
 import axios from "axios";
-
+import EditItemModal from "./editItemModal";
+import { useState } from "react";
 const TodoItem = ({ id, task, setTodos }) => {
+    const [showEditModel, setShowEditModel] = useState(false);
     const handleDone = async () => {
         try {
             await axios.delete(import.meta.env.VITE_ENDPOINT + "/todos/delete", {
@@ -13,9 +15,22 @@ const TodoItem = ({ id, task, setTodos }) => {
         }
         setTodos(prevTodos => prevTodos.filter(todo => todo._id !== id));
     }
-    return <div style={{ display: "flex", justifyContent: "space-between", gap: 10, padding: '0.6rem 1rem', backgroundColor: 'lightgray', margin: '3px', borderRadius: '6px' }}>
+    const handleEdit = async () => {
+        try {
+
+        } catch (error) {
+
+        }
+    }
+    return <div style={{ display: "flex", justifyContent: "space-between", gap: 10, padding: '0.6rem 1rem', backgroundColor: 'lightgray', margin: '5px', borderRadius: '6px' }}>
         <div style={{ fontSize: '20px' }}>{task}</div>
-        <button onClick={handleDone} style={{ cursor: 'pointer', color: "white" }}>Done</button>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 8 }}>
+            <button onClick={()=>setShowEditModel(true)} style={{ cursor: 'pointer', color: "white", height: '2rem' }}>Edit</button>
+            <button onClick={handleDone} style={{ cursor: 'pointer', color: "white", height: '2rem' }}>Done</button>
+        </div>
+        {
+            showEditModel && <EditItemModal curTask={task} setShowEditModel={setShowEditModel}/>
+        }
     </div>
 }
 

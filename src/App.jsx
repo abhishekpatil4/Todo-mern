@@ -19,7 +19,7 @@ const App = () => {
   }, []);
   return <div>
     <h1 style={{ textAlign: "center", color:"white" }}>Todo items</h1>
-    <div style={{ maxWidth: '30rem', marginLeft: "auto", marginRight: "auto", marginTop: "5rem" }}>
+    <div style={{ maxWidth: '35rem', marginLeft: "auto", marginRight: "auto", marginTop: "5rem" }}>
       {
         todos.length > 0 ?
           todos.map((todo) =>
