@@ -20,7 +20,7 @@ const AddTodoItem = ({ setTodos }) => {
         }
     }
     return <form onSubmit={handleSubmit} style={{ display: 'flex', justifyContent: "center", gap: 10, marginTop: '5rem', alignItems: 'center' }}>
-        <input required value={task} onChange={(e) => setTask(e.target.value)} type="text" placeholder="new task..." style={{ height: '2rem', minWidth: "20rem", fontSize: '18px', borderRadius: "4px", border: "1px solid gray", padding: "0rem 0.8rem" }} />
+        <input required value={task} onChange={(e) => setTask(e.target.value)} type="text" placeholder="new task" style={{ height: '2rem', minWidth: "20rem", fontSize: '18px', borderRadius: "4px", border: "1px solid gray", padding: "0rem 0.8rem" }} />
         <button style={{ color: 'white', padding: "0.3rem 1.5rem", backgroundColor:'#3d8f48'  }}>Add</button>
     </form>
 }
