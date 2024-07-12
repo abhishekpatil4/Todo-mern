@@ -22,7 +22,7 @@ const EditItemModal = ({ curTaskId, curTask, setShowEditModel, setTodos }) => {
         <h3 style={{ textAlign: "center" }}>Edit Task</h3>
         <form onSubmit={handleUpdate} style={{ display: 'flex', justifyContent: "center", gap: 10, marginTop: '2.5rem', alignItems: 'center' }}>
             <input required value={task} onChange={(e) => setTask(e.target.value)} type="text" placeholder="new task..." style={{ height: '2rem', minWidth: "20rem", fontSize: '18px', borderRadius: "4px", border: "1px solid gray", padding: "0rem 0.8rem" }} />
-            <button style={{ color: 'white', padding: "0.3rem 1.5rem" }}>Update</button>
+            <button style={{ color: 'white', padding: "0.3rem 1.5rem", backgroundColor:'#db9137' }}>Update</button>
         </form>
     </div>
 }

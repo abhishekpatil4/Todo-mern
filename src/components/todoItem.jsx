@@ -18,8 +18,8 @@ const TodoItem = ({ id, task, setTodos }) => {
     return <div style={{ display: "flex", justifyContent: "space-between", gap: 10, padding: '0.6rem 1rem', backgroundColor: 'lightgray', margin: '5px', borderRadius: '6px' }}>
         <div style={{ fontSize: '20px' }}>{task}</div>
         <div style={{ display: 'flex', justifyContent: 'center', gap: 8 }}>
-            <button onClick={()=>setShowEditModel(true)} style={{ cursor: 'pointer', color: "white", height: '2rem' }}>Edit</button>
-            <button onClick={handleDone} style={{ cursor: 'pointer', color: "white", height: '2rem' }}>Done</button>
+            <button onClick={()=>setShowEditModel(true)} style={{ cursor: 'pointer', color: "white", height: '2rem', backgroundColor:'#db9137' }}>Edit</button>
+            <button onClick={handleDone} style={{ cursor: 'pointer', color: "white", height: '2rem', backgroundColor:'#3d8f48' }}>Done</button>
         </div>
         {
             showEditModel && <EditItemModal curTaskId={id} curTask={task} setShowEditModel={setShowEditModel} setTodos={setTodos}/>
