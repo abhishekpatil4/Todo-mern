@@ -18,7 +18,7 @@ const App = () => {
     getTodos();
   }, []);
   return <div>
-    <h1 style={{ textAlign: "center" }}>Todo items</h1>
+    <h1 style={{ textAlign: "center", color:"white" }}>Todo items</h1>
     <div style={{ maxWidth: '30rem', marginLeft: "auto", marginRight: "auto", marginTop: "5rem" }}>
       {
         todos.length > 0 ?
