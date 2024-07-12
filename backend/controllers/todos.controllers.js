@@ -39,5 +39,25 @@ const deleteTodoItem = async (req, res) => {
     }
 }
 
+const updateTodoItem = async (req, res) => {
+    const id = req.body.taskID
+    const task = req.body.task
+    try {
+        const result = await Todo.findOneAndUpdate({ _id: id }, {
+            task: task
+        });
+        if (result) {
+            console.log('Document updated successfully');
+            return res.send("Document updated successfully");
+        } else {
+            console.log('Document not found');
+            return res.send("Document not found");
+        }
+    } catch (error) {
+        console.error('Error updating document:', error);
+        res.send(error);
+    }
+}
 
-module.exports = { getAllTodoItems, addNewTodoItem, deleteTodoItem };
+
+module.exports = { getAllTodoItems, addNewTodoItem, deleteTodoItem, updateTodoItem };
