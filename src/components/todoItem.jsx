@@ -15,13 +15,6 @@ const TodoItem = ({ id, task, setTodos }) => {
         }
         setTodos(prevTodos => prevTodos.filter(todo => todo._id !== id));
     }
-    const handleEdit = async () => {
-        try {
-
-        } catch (error) {
-
-        }
-    }
     return <div style={{ display: "flex", justifyContent: "space-between", gap: 10, padding: '0.6rem 1rem', backgroundColor: 'lightgray', margin: '5px', borderRadius: '6px' }}>
         <div style={{ fontSize: '20px' }}>{task}</div>
         <div style={{ display: 'flex', justifyContent: 'center', gap: 8 }}>
@@ -29,7 +22,7 @@ const TodoItem = ({ id, task, setTodos }) => {
             <button onClick={handleDone} style={{ cursor: 'pointer', color: "white", height: '2rem' }}>Done</button>
         </div>
         {
-            showEditModel && <EditItemModal curTask={task} setShowEditModel={setShowEditModel}/>
+            showEditModel && <EditItemModal curTaskId={id} curTask={task} setShowEditModel={setShowEditModel} setTodos={setTodos}/>
         }
     </div>
 }
