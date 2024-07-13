@@ -26,7 +26,7 @@ const App = () => {
             <TodoItem key={todo._id} id={todo._id} task={todo.task} setTodos={setTodos} />
           )
           :
-          <p style={{ textAlign: "center" }}>No data</p>
+          <p style={{ textAlign: "center", color:'white' }}>No data</p>
       }
     </div>
     <AddTodoItem setTodos={setTodos} />
