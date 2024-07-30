@@ -18,16 +18,19 @@ const App = () => {
     getTodos();
   }, []);
   return <div>
-    <h1 style={{ textAlign: "center", color:"white" }}>Todo</h1>
+    <h1 style={{ textAlign: "center", color: "white" }}>Todo</h1>
     <div style={{ maxWidth: '35rem', marginLeft: "auto", marginRight: "auto", marginTop: "5rem" }}>
-      {
-        todos.length > 0 ?
-          todos.map((todo) =>
+      {todos.length > 0 ? (
+        [...todos]
+          .sort((a, b) => {
+            return b.createdAt - a.createdAt;
+          })
+          .map((todo) => (
             <TodoItem key={todo._id} id={todo._id} task={todo.task} setTodos={setTodos} />
-          )
-          :
-          <p style={{ textAlign: "center", color:'white' }}>No data</p>
-      }
+          ))
+      ) : (
+        <p style={{ textAlign: "center", color: 'white' }}>No data</p>
+      )}
     </div>
     <AddTodoItem setTodos={setTodos} />
   </div>
